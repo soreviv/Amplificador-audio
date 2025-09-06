@@ -1,0 +1,9 @@
+(kicad_pro (version 20211014)
+  (project (file "amplificador.kicad_sch") (board "amplificador.kicad_pcb"))
+  (title_block (title "Amplificador - Proyecto generado automáticamente"))
+)
+
+# Nota: Este archivo de proyecto se creó automáticamente como punto de partida.
+# Abra KiCad y edite `amplificador.kicad_sch` y `amplificador.kicad_pcb` en la GUI para
+# completar el diseño. Si prefieres, puedo intentar generar esquemático y PCB más
+# completos (con pinout/footprints mapeados) si me confirmas que lo haga.

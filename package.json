@@ -7,6 +7,6 @@
     "export-gerbers:example": "bash -lc \"echo 'Ejemplo de comando: kicad-cli pcb export gerbers <archivo.kicad_pcb> --output gerbers'\""
   },
   "keywords": ["kicad","pcb","gerber","amplificador"],
-  "author": "",
+  "author": " Alejandro Viveros Dominguez",
   "license": "MIT"
 }
