@@ -1,0 +1,15 @@
+# Archivo plantilla: amplificador.kicad_pro
+# Este es un archivo de proyecto placeholder para KiCad.
+# No lo uses directamente en producción. Abra KiCad y cree un nuevo proyecto
+# o reemplace este archivo con uno generado por KiCad.
+
+# Ejemplo de pasos para crear un proyecto real:
+# 1. Abre KiCad y crea un nuevo proyecto llamado "amplificador". Esto generará
+#    los archivos: amplificador.kicad_pro, amplificador.kicad_sch, amplificador.kicad_pcb
+# 2. Diseña el esquemático con Eeschema y guarda.
+# 3. En Pcbnew, configura reglas, footprints y rutas, luego guarda el .kicad_pcb.
+# 4. Usa el exportador de Gerbers o kicad-cli para generar los gerbers en `gerbers/`.
+
+# Si quieres, puedo intentar generar un proyecto KiCad válido usando `kicad-cli`
+# desde la línea de comandos si confirmas que quieres que lo haga y me indicas la
+# versión objetivo de KiCad (por ejemplo 6.x o 7.x).

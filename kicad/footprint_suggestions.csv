@@ -1,0 +1,11 @@
+Component,Suggested Footprint,KiCad Lib Reference,Notes
+IC1,SOIC-16,Package_SO:SOIC-16_3.9x10.3mm,Confirm pinout y encapsulado del IRS2092S
+Q1/Q2,TO-220 or DPAK,Package_TO:TO-220-3_l4.5mm,Si se usan IRF3205 usar TO-220, para SMD usar DPAK
+L1,ThroughHole_15uH,Inductor_SMD:L_1210_... ,Confirm corriente y tamaño; quizá se use inductor radial
+C1/C2,Radial_Electrolytic_12.5x20,Capacitor_THT:Radial_Electrolytic,Electroliticos de potencia
+C3,1206,C_1206,Desacoplo cerámico
+R1/R2,0805,R_0805,Resistencias 1% SMD
+U1,SOIC-8 or DIP-8,Package_SO:SO-8 / Package_DIP:DIP-8,Elija SMD o through-hole
+D1,SMA,Diode_SMA,Schottky de potencia
+
+# Nota: Los nombres de librerias son indicativos; antes de colocarlos en el esquema confirme la librer\u00eda instalada en su KiCad (v6/v7). Puedo mapear automáticamente a librerias oficiales si quieres.

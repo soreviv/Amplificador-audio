@@ -1,0 +1,14 @@
+Designator,Value,Description,Quantity,Footprint,Notes
+IC1,IRS2092S,Controlador PWM Clase D,1,SOIC-16 (sujeto a confirmación),Controlador PWM sugerido en la tabla
+Q1,Q2,IRF3205 or IRFZ44N,MOSFET de potencia,2,TO-220 / DPAK (verificar package),MOSFETs alto y bajo lado
+L1,15uH,Inductor de salida,1,ThroughHole-Inductor-15uH,15A rating recomendado
+C1,C2,470uF/50V,Condensador electrolítico de filtrado,2,Radial Electrolytic (ej. 12.5x20mm),Filtrado de alimentación
+C3,100nF/100V,Condensador de desacoplo,2,1206/1812 ceramic,Desacoplamiento
+R1,R2,10k,1%,Divisor de voltaje de entrada,2,0805,Dividor de entrada
+U1,OPA1612 or NE5532,Amplificador operacional de preamplificador,1,SOIC-8 / DIP-8 (según montaje),Elegir versión SMD o DIP
+D1,1N5822,Diodo Schottky de protección,2,SMA/DO-214AC,Protección de alimentación
+
+# Notas:
+# - He inferido footprints razonables; por favor confirma los paquetes reales antes de diseñar la PCB.
+# - Para Q1/Q2 confirme el paquete (TO-220, TO-247, DPAK) según la selección de MOSFET.
+# - Si quieres, puedo intentar mapear a librerías KiCad oficiales (ej.: 'Device:Package') automáticamente.

@@ -1,0 +1,12 @@
+{
+  "name": "amplificador-pcb",
+  "version": "0.1.0",
+  "description": "Scaffold para proyecto PCB - Amplificador de audio",
+  "scripts": {
+    "check-kicad": "bash -lc \"command -v kicad-cli >/dev/null 2>&1 && kicad-cli --version || (echo 'kicad-cli no encontrado. Instale KiCad 6+ y asegúrese de que kicad-cli esté en PATH'; exit 1)\"",
+    "export-gerbers:example": "bash -lc \"echo 'Ejemplo de comando: kicad-cli pcb export gerbers <archivo.kicad_pcb> --output gerbers'\""
+  },
+  "keywords": ["kicad","pcb","gerber","amplificador"],
+  "author": "",
+  "license": "MIT"
+}

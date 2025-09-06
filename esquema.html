@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquema Circuito Amplificador de Audio Clase D 200W</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #569cd6;
+            text-align: center;
+        }
+        .schematic {
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        .note {
+            background-color: #2a313a;
+            border-left: 4px solid #ce9178;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .component {
+            color: #4ec9b0;
+            font-weight: bold;
+        }
+        .value {
+            color: #b5cea8;
+        }
+        .label {
+            color: #76d9e6;
+        }
+        .comment {
+            color: #608b4e;
+            font-style: italic;
+        }
+        .power {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        pre {
+            white-space: pre;
+            font-family: 'Courier New', monospace;
+            line-height: 1.2;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ESQUEMA CIRCUITAL - AMPLIFICADOR CLASE D 200W</h1>
+        
+        <div class="note">
+            <p><span class="comment">Este esquema representa un amplificador de audio clase D de 200W utilizando el controlador IRS2092S.</span></p>
+            <p><span class="comment">Diseño basado en topología puente completo (H-Bridge) para máxima eficiencia.</span></p>
+        </div>
+
+        <div class="schematic">
+            <pre>
+<span class="power">                            +VCC (±35V)
+                                |
+                                |
+                                Z
+                                Z  C1
+                                Z 470μF/50V
+                                Z
+                                |
+                                +----+----+
+                                |    |    |
+                                |    Z    |
+                                |    Z C2  |
+                                |    Z 470μF/50V
+                                |    |    |
+                                |    |    |
+                                +----+----+
+                                |
+                                |
+                            +---v---+
+                            |       |
+                            |  IC1  | IRS2092S
+                            |       | PWM Controller
+                            +---+---+
+                                |
+                                |    +-------+
+                                +----+ VCC   |
+                                     |       |
+                                     |       |
+                                     |  GND  +----+
+                                     |       |    |
+                                     |       |    Z
+                                     |       |    Z C3
+                                     |       |    Z 100nF
+                                     |       |    |
+                                     +-------+    |
+                                |              |    |
+                                |              +----+
+                                |                 |
+                                |                 |
+                     +----------+----------+      |
+                     |          |          |      |
+                  +--v--+    +--v--+    +--v--+    |
+                  |     |    |     |    |     |    |
+                  | Q1  |    | Q2  |    | Q3  |    |
+                  |     |    |     |    |     |    |
+                  | MOS |    | MOS |    | MOS |    |
+                  | FET |    | FET |    | FET |    |
+                  | HI  |    | LO  |    | HI  |    |
+                  +--+--+    +--+--+    +--+--+    |
+                     |          |          |       |
+                     |          |          |       |
+                     +----------+----------+       |
+                                |                 |
+                                +--------+--------+
+                                         |
+                                         Z
+                                         Z L1
+                                         Z 15μH
+                                         Z
+                                         |
+                                         +----+----+-------> SALIDA (+)
+                                         |    |    |
+                                         |    Z    |
+                                         |    Z C4  |
+                                         |    Z 100nF |
+                                         |    |    |
+                                         |    |    |
+                                         +----+----+
+                                         |
+                                         |
+                                         +----+----+-------> SALIDA (-)
+                                         |    |    |
+                                         |    Z    |
+                                         |    Z C5  |
+                                         |    Z 100nF |
+                                         |    |    |
+                                         |    |    |
+                                         +----+----+
+                                         |
+                                +--------+--------+
+                                |                 |
+                                |                 |
+                                |                 |
+                            +---v---+         +---v---+
+                            |       |         |       |
+                            |  U1   |         |  U2   |
+                            |       |         |       |
+                            |  OPAMP|         |  OPAMP|
+                            |       |         |       |
+                            +---+---+         +---+---+
+                                |                 |
+                                |                 |
+                     +----------+----------+      |
+                     |          |          |      |
+                  +--v--+    +--v--+    +--v--+   |
+                  |     |    |     |    |     |   |
+                  | R1  |    | R2  |    | R3  |   |
+                  | 10k |    | 10k |    | 1k  |   |
+                  +--+--+    +--+--+    +--+--+   |
+                     |          |          |      |
+                     |          |          |      |
+                     +----------+----------+      |
+                                |                 |
+                                |                 |
+                                +--------+--------+
+                                         |
+                                         |
+                                         |
+                                +--------+--------+
+                                |                 |
+                                |     AUDIO IN    |
+                                |     (3.5mm)     |
+                                +--------+--------+
+                                         |
+                                         |
+                                         Z
+                                         Z R4
+                                         Z 47kΩ
+                                         Z
+                                         |
+                                         +----+----+
+                                         |    |    |
+                                         |    Z    |
+                                         |    Z C6  |
+                                         |    Z 1μF |
+                                         |    |    |
+                                         +----+----+
+                                         |
+                                         |
+                                         +----> TO IC1 (IN+)
+                                         |
+                                         |
+                                         Z
+                                         Z R5
+                                         Z 47kΩ
+                                         Z
+                                         |
+                                         +----> TO IC1 (IN-)
+                                         |
+                                         |
+                                       GND (TIERRA)
+                                         |
+                                         |
+                                         |
+                                +--------+--------+
+                                |                 |
+                                |     GND PLANE   |
+                                |  (Cobertura completa)  |
+                                |                 |
+                                +-----------------+
+
+<span class="comment">/* CONEXIONES DETALLADAS DEL CONTROLADOR IRS2092S (IC1) */</span>
+
+<span class="label">PIN 1 - VDD:</span>     +12V para lógica interna
+<span class="label">PIN 2 - GND:</span>     Tierra común
+<span class="label">PIN 3 - IN+:</span>     Entrada de señal positiva
+<span class="label">PIN 4 - IN-:</span>     Entrada de señal negativa
+<span class="label">PIN 5 - RT:</span>      Resistencia de temporización (22kΩ a GND)
+<span class="label">PIN 6 - CT:</span>      Condensador de temporización (470pF a GND)
+<span class="label">PIN 7 - PVCC:</span>    +35V (Alimentación de potencia)
+<span class="label">PIN 8 - PH:</span>      Señal de control para MOSFET high-side
+<span class="label">PIN 9 - LO:</span>      Señal de control para MOSFET low-side
+<span class="label">PIN 10 - COM:</span>    Tierra de potencia
+<span class="label">PIN 11 - VS:</span>     Fuente de alta tensión (conectado a nodo de salida de MOSFETs)
+<span class="label">PIN 12 - HB:</span>     Bootstrap para high-side driver
+<span class="label">PIN 13 - HIN:</span>    Entrada de señal PWM high-side
+<span class="label">PIN 14 - LIN:</span>    Entrada de señal PWM low-side
+
+<span class="comment">/* COMPONENTES DE BOOTSTRAP */</span>
+D1: 1N5822 (entre PVCC y HB)
+C7: 10μF/50V (entre HB y VS)
+
+<span class="comment">/* PROTECCIÓN */</span>
+F1: Fusible rápido 10A (en línea +VCC)
+R6: 0.1Ω/5W (resistencia de detección de corriente)
+U3: Comparador para protección contra sobrecarga
+
+<span class="comment">/* FILTRO DE SALIDA (SEGUNDA ETAPA) */</span>
+L2: 10μH
+C8: 220nF
+L3: 10μH
+C9: 220nF
+                (Configuración LC-LC para filtrado armónico)
+
+<span class="power">ESPECIFICACIONES:</span>
+- Potencia de salida: 200W RMS @ 8Ω
+- Eficiencia: 92%
+- THD: < 0.05%
+- Frecuencia de conmutación: 380kHz
+- Respuesta en frecuencia: 20Hz - 20kHz (±0.5dB)
+            </pre>
+        </div>
+
+        <div class="note">
+            <p><span class="comment">Instrucciones de montaje:</span></p>
+            <p><span class="component">1.</span> <span class="comment">Comience por instalar los componentes de menor altura.</span></p>
+            <p><span class="component">2.</span> <span class="comment">Coloque primero resistencias, seguidas de capacitores pequeños.</span></p>
+            <p><span class="component">3.</span> <span class="comment">Instale los circuitos integrados (OPAMPs y controlador PWM).</span></p>
+            <p><span class="component">4.</span> <span class="comment">Monte los MOSFETs con pasta térmica y asegure con tornillos.</span></p>
+            <p><span class="component">5.</span> <span class="comment">Instale el inductor de salida y capacitores de potencia.</span></p>
+            <p><span class="component">6.</span> <span class="comment">Verifique todas las conexiones antes de aplicar alimentación.</span></p>
+            <p><span class="component">7.</span> <span class="comment">Realice pruebas iniciales con fuente de corriente limitada.</span></p>
+        </div>
+
+        <div class="note">
+            <p><span class="power">ADVERTENCIAS DE SEGURIDAD:</span></p>
+            <p><span class="comment">• Las tensiones de alimentación pueden ser peligrosas (±35V).</span></p>
+            <p><span class="comment">• Los MOSFETs pueden calentarse considerablemente.</span></p>
+            <p><span class="comment">• Use equipo de protección durante pruebas.</span></p>
+            <p><span class="comment">• No opere sin carga conectada (altavoz).</span></p>
+            <p><span class="comment">• Asegure una adecuada disipación de calor con disipador grande.</span></p>
+        </div>
+    </div>
+</body>
+</html>

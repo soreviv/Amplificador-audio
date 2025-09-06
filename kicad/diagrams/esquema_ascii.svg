@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Versi\u00f3n SVG del preformatted schematic extraido de esquema.html -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200">
+  <foreignObject width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <pre style="font-family: monospace; font-size:12px; color:#000; background:#fff; padding:10px; white-space:pre-wrap;">
+                            +VCC (±35V)
+                                |
+                                |
+                                Z
+                                Z  C1
+                                Z 470µF/50V
+                                Z
+                                |
+                                +----+----+
+                                |    |    |
+                                |    Z    |
+                                |    Z C2  |
+                                |    Z 470µF/50V
+                                |    |    |
+                                |    |    |
+                                +----+----+
+                                |
+                                |
+                            +---v---+
+                            |       |
+                            |  IC1  | IRS2092S
+                            |       | PWM Controller
+                            +---+---+
+                                |
+                                |    +-------+
+                                +----+ VCC   |
+                                     |       |
+                                     |       |
+                                     |  GND  +----+
+                                     |       |    |
+                                     |       |    Z
+                                     |       |    Z C3
+                                     |       |    Z 100nF
+                                     |       |    |
+                                     +-------+    |
+                                |              |    |
+                                |              +----+
+                                |                 |
+                                |                 |
+                     +----------+----------+      |
+                     |          |          |      |
+                  +--v--+    +--v--+    +--v--+    |
+                  |     |    |     |    |     |    |
+                  | Q1  |    | Q2  |    | Q3  |    |
+                  |     |    |     |    |     |    |
+                  | MOS |    | MOS |    | MOS |    |
+                  | FET |    | FET |    | FET |    |
+                  | HI  |    | LO  |    | HI  |    |
+                  +--+--+    +--+--+    +--+--+    |
+                     |          |          |       |
+                     |          |          |       |
+                     +----------+----------+       |
+                                |                 |
+                                +--------+--------+
+                                         |
+                                         Z
+                                         Z L1
+                                         Z 15µH
+                                         Z
+                                         |
+                                         +----+----+-------> SALIDA (+)
+                                         |    |    |
+                                         |    Z    |
+                                         |    Z C4  |
+                                         |    Z 100nF |
+                                         |    |    |
+                                         |    |    |
+                                         +----+----+
+                                         |
+                                         |
+                                         +----+----+-------> SALIDA (-)
+                                         |    |    |
+                                         |    Z    |
+                                         |    Z C5  |
+                                         |    Z 100nF |
+                                         |    |    |
+                                         |    |    |
+                                         +----+----+
+                                         |
+                                +--------+--------+
+                                |                 |
+                                |                 |
+                                |                 |
+                            +---v---+         +---v---+
+                            |       |         |       |
+                            |  U1   |         |  U2   |
+                            |       |         |       |
+                            |  OPAMP|         |  OPAMP|
+                            |       |         |       |
+                            +---+---+         +---+---+
+                                |                 |
+      </pre>
+    </body>
+  </foreignObject>
+</svg>

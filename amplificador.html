@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Amplificador de Audio Clase D 200W</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .note {
+            background: #e7f3ff;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .component {
+            font-family: monospace;
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PCB para Amplificador de Audio Clase D 200W</h1>
+        
+        <div class="note">
+            <strong>Nota:</strong> Este es un diseño conceptual de PCB para un amplificador de audio clase D de 200W. 
+            No debe utilizarse para construcción sin validación profesional y pruebas adecuadas.
+        </div>
+
+        <h2>Características Principales</h2>
+        <ul>
+            <li>Potencia de salida: 200W RMS (8Ω), 300W (4Ω)</li>
+            <li>Eficiencia: >90%</li>
+            <li>Respuesta en frecuencia: 20Hz - 20kHz (±0.5dB)</li>
+            <li>Relación señal/ruido: >95dB</li>
+            <li>THD+N: <0.05% (1kHz, 100W)</li>
+            <li>Tensión de alimentación: ±24V a ±35V DC</li>
+            <li>Dimensiones de PCB: 150mm × 100mm</li>
+        </ul>
+
+        <h2>Diagrama de Bloques</h2>
+        <div class="diagram">
+            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Input section -->
+                <rect x="50" y="160" width="100" height="80" fill="#e6f7ff" stroke="#2196F3" stroke-width="2"/>
+                <text x="100" y="200" text-anchor="middle" font-size="14">Entrada de Audio</text>
+                
+                <!-- Pre-amplifier -->
+                <rect x="180" y="140" width="120" height="120" fill="#e8f5e8" stroke="#4CAF50" stroke-width="2"/>
+                <text x="240" y="200" text-anchor="middle" font-size="14">Pre-amplificador</text>
+                <text x="240" y="220" text-anchor="middle" font-size="12">y Control de Ganancia</text>
+                
+                <!-- Modulador PWM -->
+                <rect x="330" y="140" width="120" height="120" fill="#fff3e0" stroke="#FF9800" stroke-width="2"/>
+                <text x="390" y="200" text-anchor="middle" font-size="14">Modulador</text>
+                <text x="390" y="220" text-anchor="middle" font-size="14">PWM</text>
+                
+                <!-- Driver de salida -->
+                <rect x="480" y="140" width="120" height="120" fill="#fce4ec" stroke="#E91E63" stroke-width="2"/>
+                <text x="540" y="200" text-anchor="middle" font-size="14">Driver</text>
+                <text x="540" y="220" text-anchor="middle" font-size="14">de Salida</text>
+                
+                <!-- Salida -->
+                <rect x="630" y="160" width="100" height="80" fill="#e6f7ff" stroke="#2196F3" stroke-width="2"/>
+                <text x="680" y="200" text-anchor="middle" font-size="14">Salida a</text>
+                <text x="680" y="220" text-anchor="middle" font-size="14">Altavoz</text>
+                
+                <!-- Alimentación -->
+                <rect x="330" y="300" width="120" height="60" fill="#f3e5f5" stroke="#9C27B0" stroke-width="2"/>
+                <text x="390" y="335" text-anchor="middle" font-size="14">Alimentación</text>
+                
+                <!-- Flechas -->
+                <line x1="150" y1="200" x2="180" y2="200" stroke="#333" marker-end="url(#arrow)"/>
+                <line x1="300" y1="200" x2="330" y2="200" stroke="#333" marker-end="url(#arrow)"/>
+                <line x1="450" y1="200" x2="480" y2="200" stroke="#333" marker-end="url(#arrow)"/>
+                <line x1="600" y1="200" x2="630" y2="200" stroke="#333" marker-end="url(#arrow)"/>
+                <line x1="390" y1="260" x2="390" y2="300" stroke="#333" marker-end="url(#arrow)"/>
+                
+                <!-- Definición de flecha -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="stroke-width">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <h2>Lista de Componentes Principales</h2>
+        <table>
+            <tr>
+                <th>Componente</th>
+                <th>Valor/Modelo</th>
+                <th>Cantidad</th>
+                <th>Notas</th>
+            </tr>
+            <tr>
+                <td><span class="component">IC1</span></td>
+                <td>IRS2092S o equivalente</td>
+                <td>1</td>
+                <td>Controlador PWM Clase D</td>
+            </tr>
+            <tr>
+                <td><span class="component">Q1, Q2</span></td>
+                <td>IRFZ44N o IRF3205</td>
+                <td>2</td>
+                <td>MOSFETs de potencia (alto y bajo lado)</td>
+            </tr>
+            <tr>
+                <td><span class="component">L1</span></td>
+                <td>15μH, 15A</td>
+                <td>1</td>
+                <td>Inductor de salida</td>
+            </tr>
+            <tr>
+                <td><span class="component">C1, C2</span></td>
+                <td>470μF, 50V</td>
+                <td>2</td>
+                <td>Filtrado de alimentación</td>
+            </tr>
+            <tr>
+                <td><span class="component">C3</span></td>
+                <td>100nF, 100V</td>
+                <td>2</td>
+                <td>Desacoplamiento</td>
+            </tr>
+            <tr>
+                <td><span class="component">R1, R2</span></td>
+                <td>10kΩ, 1%</td>
+                <td>2</td>
+                <td>Divisor de voltaje de entrada</td>
+            </tr>
+            <tr>
+                <td><span class="component">U1</span></td>
+                <td>OPA1612 o NE5532</td>
+                <td>1</td>
+                <td>Pre-amplificador operacional</td>
+            </tr>
+            <tr>
+                <td><span class="component">D1</span></td>
+                <td>1N5822</td>
+                <td>2</td>
+                <td>Diodos de protección</td>
+            </tr>
+        </table>
+
+        <h2>Consideraciones de Diseño de PCB</h2>
+        <ul>
+            <li><strong>Capas:</strong> 4 capas recomendadas (Top, GND, Power, Bottom)</li>
+            <li><strong>Material:</strong> FR-4, 1.6mm de espesor</li>
+            <li><strong>Peso del cobre:</strong> 2 oz para trazas de potencia</li>
+            <li><strong>Área de tierra:</strong> Plano de tierra completo en capa interna</li>
+            <li><strong>Trazas de potencia:</strong> Mínimo 3mm de ancho para conexiones de alimentación</li>
+            <li><strong>Disipación de calor:</strong> Pads térmicos grandes conectados a plano de tierra</li>
+            <li><strong>Separación:</strong> Mantener trazas de señal lejos de trazas de potencia</li>
+            <li><strong>Vias térmicas:</strong> Usar múltiples microvías bajo MOSFETs para disipación</li>
+        </ul>
+
+        <h2>Layout Recomendado</h2>
+        <div class="note">
+            El diseño del PCB debe seguir estrictamente las recomendaciones del fabricante del controlador PWM.
+            El bucle de potencia debe ser lo más pequeño posible para minimizar EMI.
+        </div>
+        <ol>
+            <li>Colocar el controlador PWM (IC1) en el centro de la PCB</li>
+            <li>Ubicar los MOSFETs (Q1, Q2) cerca del controlador PWM</li>
+            <li>Colocar el inductor de salida (L1) cerca de los MOSFETs</li>
+            <li>Ubicar los capacitores de desacoplamiento lo más cerca posible del controlador PWM</li>
+            <li>Colocar el amplificador operacional (U1) lejos de las secciones de alta potencia</li>
+            <li>Ubicar los conectores de entrada y salida en bordes opuestos</li>
+            <li>Colocar los capacitores de alimentación cerca de los pines de alimentación</li>
+        </ol>
+
+        <h2>Consejos para la Construcción</h2>
+        <ul>
+            <li>Usar soldadura de calidad y temperatura adecuada</li>
+            <li>Asegurar buena ventilación para los MOSFETs</li>
+            <li>Verificar conexiones antes de aplicar alimentación</li>
+            <li>Usar fuente de alimentación limitada en corriente para pruebas iniciales</li>
+            <li>Implementar protección contra cortocircuitos</li>
+            <li>Considerar un disipador de calor adecuado (mínimo 15cm²/W)</li>
+            <li>Realizar pruebas de aislamiento antes de operar</li>
+        </ul>
+
+        <div class="note">
+            <strong>Advertencia de Seguridad:</strong> Los amplificadores de alta potencia pueden generar tensiones peligrosas 
+            y temperaturas elevadas. Utilice equipo de protección adecuado y siga procedimientos de seguridad. 
+            No opere sin carga conectada.
+        </div>
+    </div>
+</body>
+</html>

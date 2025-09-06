@@ -1,0 +1,20 @@
+# Node
+node_modules/
+package-lock.json
+
+# VS Code
+.vscode/
+
+# Gerbers and outputs
+gerbers/
+export/
+*.gbr
+
+# KiCad backups and autosaves
+*.kicad_pcb-bak
+*.kicad_pro-bak
+*.kicad_pcb
+auto-
+
+# macOS
+.DS_Store
